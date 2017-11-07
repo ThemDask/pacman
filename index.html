@@ -18,8 +18,8 @@
 
     var game = new Phaser.Game(448, 496, Phaser.AUTO);
     
-    //adding score and time variables    
-    var score = 0;     
+    //adding (score and) time variables    
+    //var score = 0;     
     var time = 0;
  
     var Pacman = function (game) {
@@ -43,6 +43,7 @@
         this.current = Phaser.NONE;
         this.turning = Phaser.NONE;
         
+	//add starting time = null
         this.time = 0;
         this.textTime = null;
 
@@ -95,7 +96,7 @@
             
             //adding time in-game
             this.textTime = game.add.text(195, 220, "Time: "+Math.floor(this.game.time.totalElapsedSeconds()),
-	        { font: '20px Tahoma',  fill: "yellow" });
+	        { font: '15px Tahoma',  fill: "red" });
 
             //  Pacman should collide with everything except the safe tile
             this.map.setCollisionByExclusion([this.safetile], true, this.layer);
