@@ -19,7 +19,8 @@
     var game = new Phaser.Game(448, 496, Phaser.AUTO);
         
     //adding score and time variables    
-    //var score = 0;     
+    var score = 0;
+    var scoretext;	    
     var time = 0;    
 
     var Pacman = function (game) {
@@ -119,6 +120,9 @@
 
             this.pacman.play('munch');
             this.move(Phaser.LEFT);
+		
+	    //adding score in-game
+	    scoretext = game.add.text(0, 170, 'score: 0', {font: '15px Tahoma', fill: 'yellow'})
 
         },
 
@@ -242,6 +246,10 @@
             var audio = new Audio('assets/Zelda_collect.mp3');
             audio.volume = 0.1;
             audio.play();
+		
+	    //adding dot in score
+	    score += 1;
+	    scoretext.text = "score: " +score;
 
             dot.kill();
 
