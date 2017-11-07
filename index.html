@@ -95,8 +95,8 @@
             this.dots.setAll('y', 6, false, false, 1);
             
             //adding time in-game
-            this.textTime = game.add.text(195, 220, "Time: "+Math.floor(this.game.time.totalElapsedSeconds()),
-	        { font: '15px Tahoma',  fill: "red" });
+            this.textTime = game.add.text(195, 220, "Timer: "+Math.floor(this.game.time.totalElapsedSeconds()),
+	        { font: '15px Tahoma',  fill: "yellow" });
 
             //  Pacman should collide with everything except the safe tile
             this.map.setCollisionByExclusion([this.safetile], true, this.layer);
