@@ -101,6 +101,12 @@
 
             this.pacman.play('munch');
             this.move(Phaser.LEFT);
+            
+            //adding score and time on the interface
+            var scoreText = game.add.text(460, 16, 'SCORE', { font: "20px Arial", fill: "#ffff00" });
+            var timeText = game.add.text(460, 80, 'TIME', { font: "20px Arial", fill: "#ffff00" });
+            scoreNum = game.add.text(470, 40, '0', { font: "18px Arial", fill: "#ffffff" });
+            timeNum = game.add.text(470, 104, ' 0', { font: "18px Arial", fill: "#ffffff" });
 
         },
 
