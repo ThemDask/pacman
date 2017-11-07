@@ -48,9 +48,7 @@
         this.time = 0;
         this.textTime = null;
         
-        //add starting score = null
-	//this.score = 0;
-	//this.textScore = null;    
+          
 
     };
 
@@ -102,8 +100,9 @@
             //adding time in-game
             this.textTime = game.add.text(0, 0, "Timer: "+Math.floor(this.game.time.totalElapsedSeconds()),
 	        { font: '15px Tahoma',  fill: "yellow" });
+		
 	    //adding score in-game
-	    
+	    scoretext = game.add.text(0, 170, 'score: 0', {font: '15px Tahoma', fill: 'yellow'})
 
             //  Pacman should collide with everything except the safe tile
             this.map.setCollisionByExclusion([this.safetile], true, this.layer);
@@ -120,9 +119,7 @@
 
             this.pacman.play('munch');
             this.move(Phaser.LEFT);
-		
-	    //adding score in-game
-	    scoretext = game.add.text(0, 170, 'score: 0', {font: '15px Tahoma', fill: 'yellow'})
+	    
 
         },
 
