@@ -20,7 +20,7 @@
         {
          "columns":16,
          "firstgid":1,
-         "image":"F:\/\u03c3\u03c7\u03bf\u03bb\u03b7\/\u03b3' \u03b5\u03be\u03b1\u03bc\u03b7\u03bd\u03bf\/\u0395\u03c0\u03b9\u03ba\u03bf\u03b9\u03bd\u03c9\u03bd\u03b9\u03b1 \u0391\u03bd\u03b8\u03c1 - \u03a5\u03c0\/pacman master folder\/assets\/pacman-tiles.png",
+         "image":"F:./pacman-tiles.png",
          "imageheight":48,
          "imagewidth":256,
          "margin":0,
