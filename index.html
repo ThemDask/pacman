@@ -74,6 +74,7 @@
             this.load.crossOrigin = 'anonymous';
 
             this.load.image('dot', 'assets/item.png');
+	    this.load.iamge('bonus', 'assets/bonus.png');
             this.load.image('tiles', 'assets/new_tiles.png');
             this.load.spritesheet('pacman', 'assets/Link.png', 32, 32);
             this.load.tilemap('map', 'assets/pacman-map.json', null, Phaser.Tilemap.TILED_JSON);
@@ -119,6 +120,11 @@
 
             this.pacman.play('munch');
             this.move(Phaser.LEFT);
+		
+	    //adding bonus
+	    let points= this.dots.children.length;
+            rn = Math.floor(Math.random() * points);
+            this.dots.children[rn].loadTexture('bonus');
 	    
 
         },
@@ -238,17 +244,30 @@
         },
 
         eatDot: function (pacman, dot) {
-            
-            //adding sound effect
-            var audio = new Audio('assets/Zelda_collect.mp3');
-            audio.volume = 0.1;
-            audio.play();
+	    //adding sound to dots + score
+	    //10 points if normal dot, 100 if bonus
+	    const bonus = this.dots.getChildIndex(dot) == rn;
 		
-	    //adding dot in score
-	    score += 10;
-	    scoretext.text = "Score: " +score;
-
-            dot.kill();
+	    if(bonus){
+                score += 100;
+                dot.kill();	
+                var audio = new Audio('sound/Zelda_collect.mp3');
+                audio.volume = 0.1;
+                let points = this.dots.children.length;
+                rn = Math.floor(Math.random() * points);
+                this.dots.children[rn].revive();
+                this.dots.children[rn].loadTexture('bonus');
+             }
+	     else{
+                dot.kill();
+                 var audio = new Audio('sound/Zelda_collect.mp3');
+	     audio.volume = 0.1;
+                 score += 10;
+	     }
+	     
+	    audio.play();
+		
+	    scoretxt.text = 'Score: ' +score;
 
             if (this.dots.total === 0)
             {
