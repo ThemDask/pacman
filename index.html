@@ -74,7 +74,7 @@
             this.load.crossOrigin = 'anonymous';
 
             this.load.image('dot', 'assets/item.png');
-	    this.load.iamge('bonus', 'assets/bonus.png');
+	    this.load.image('bonus', 'assets/bonus.png');
             this.load.image('tiles', 'assets/new_tiles.png');
             this.load.spritesheet('pacman', 'assets/Link.png', 32, 32);
             this.load.tilemap('map', 'assets/pacman-map.json', null, Phaser.Tilemap.TILED_JSON);
@@ -267,9 +267,9 @@
 	     
 	    audio.play();
 		
-	    scoretxt.text = 'Score: ' +score;
+	    scoretext.text = 'Score: ' +score;
 
-            if (this.dots.total === 0)
+            if (this.dots.total === 1)
             {
                 this.dots.callAll('revive');
             }
