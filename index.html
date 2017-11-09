@@ -251,7 +251,7 @@
 	    if(bonus){
                 score += 100;
                 dot.kill();	
-                var audio = new Audio('sound/Zelda_collect.mp3');
+                var audio = new Audio('assets/Zelda_collect.mp3');
                 audio.volume = 0.1;
                 let points = this.dots.children.length;
                 rn = Math.floor(Math.random() * points);
@@ -260,7 +260,7 @@
              }
 	     else{
                 dot.kill();
-                 var audio = new Audio('sound/Zelda_collect.mp3');
+                 var audio = new Audio('assets/Zelda_collect.mp3');
 	     audio.volume = 0.1;
                  score += 10;
 	     }
