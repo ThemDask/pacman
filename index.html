@@ -17,6 +17,10 @@
     <script type="text/javascript">
 
     var game = new Phaser.Game(448, 496, Phaser.AUTO);
+	    
+    //adding live(s) variables
+    var lives = 3;
+    var livestxt = '';
         
     //adding score and time variables    
     var score = 0;
@@ -102,7 +106,8 @@
             this.textTime = game.add.text(0, 265, "Timer: "+Math.floor(this.game.time.totalElapsedSeconds()),
 	        { font: '15px Tahoma',  fill: "yellow" });
 		
-	    //adding score in-game
+	    //adding score and lives in-game
+            livestext = game.add.text(370, 170, 'Lives: ' + lives, {font:'15px Tahoma', fill: 'yellow'});
 	    scoretext = game.add.text(0, 170, 'score: 0', {font: '15px Tahoma', fill: 'yellow'})
 
             //  Pacman should collide with everything except the safe tile
