@@ -82,6 +82,7 @@
             this.load.image('tiles', 'assets/new_tiles.png');
             this.load.spritesheet('pacman', 'assets/Link.png', 32, 32);
             this.load.tilemap('map', 'assets/pacman-map.json', null, Phaser.Tilemap.TILED_JSON);
+	     this.load.image('teleport', 'assets/tp.png');	
 
             //  Needless to say, graphics (C)opyright Namco
 
@@ -93,6 +94,9 @@
             this.map.addTilesetImage('pacman-tiles', 'tiles');
 
             this.layer = this.map.createLayer('Pacman');
+		
+	    this.tp1 = this.add.physicsGroup();
+	    this.tp2 = this.add.physicsGroup();
 
             this.dots = this.add.physicsGroup();
 
